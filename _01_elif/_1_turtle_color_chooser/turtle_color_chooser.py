@@ -13,17 +13,35 @@ def get_random_color():
 if __name__ == '__main__':
     window = turtle.Screen()
     window.bgcolor('white')
+# Returns a random color!
+    t = turtle.Turtle()
+    color_choice = simpledialog.askstring("Pen Color", "Enter a color for the pen (or press enter for random color): ")
 
-    # TODO 1) Create a new Turtle
-    #      2) Make the turtle draw a shape (this will take more than one line
-    #         of code)
-    #      3) Set the pen width to 10
-    #      4) Ask the user what color pen they would like to draw with
-    #      5) Use an if/else statement to set the pen color that the user
-    #         requested
-    #      6) If the user doesn't enter anything, choose a random color
-    #      7) Put a loop around your code so that you keep asking the user for
-    #         more colors & drawing them
+    # Use an if/else statement to set the pen color that the user requested
+    if color_choice:
+        t.pencolor(color_choice)
+    else:
+        t.pencolor(get_random_color())
 
+# Create a new Turtle
+t = turtle.Turtle()
+
+window = turtle.Screen()
+window.bgcolor('white')
+
+while True:
+    # Make the turtle draw a shape
+    t.forward(100)
+    t.left(90)
+    t.forward(100)
+    t.left(90)
+    t.forward(100)
+    t.left(90)
+    t.forward(100)
+    t.left(90)
+
+    # Set the pen width to 10
+    t.pensize(10)
+    break
     # ===================== DO NOT EDIT THE CODE BELOW ============================
     turtle.done()
